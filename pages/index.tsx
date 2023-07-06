@@ -1,13 +1,32 @@
+import Card from '@/components/Card'
+import NewsArticleEntry from '@/components/NewsArticleEntry'
+import NewsArticleGrid from '@/components/NewsArticleGrid'
+import { NewsArticle, NewsResponse } from '@/models/CountryModel'
+import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 
-export default function Home() {
+interface BreakingNewsPageProps {
+  newsArticles: NewsArticle[],
+}
+
+export const getServerSideProps: GetServerSideProps<BreakingNewsPageProps> = async () => {
+  const response = await fetch("https://newsapi.org/v2/top-headlines?country=us&apiKey=" + process.env.NEWS_API_KEY)
+  const newsResponse: NewsResponse = await response.json();
+  return {
+    props: {
+      newsArticles: newsResponse.articles
+    }
+  }
+}
+
+export default function BreakingNewsPage({ newsArticles } : BreakingNewsPageProps) {
   return (
     <>
       <Head>
-        <title key="title">Description</title>
+        <title key="title">Breaking News Page</title>
       </Head>
       <main>
-        <div>a</div>
+        <NewsArticleEntry article={newsArticles[12]} />
       </main>
     </>
   )

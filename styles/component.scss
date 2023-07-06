@@ -1,0 +1,52 @@
+.Card-Component {
+  background-color: #457B9D;
+  width: 100%;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  color: white;
+  & img {
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+  & h1 {
+    text-align: justify;
+  }
+  & p {
+    text-align: justify;
+  }
+  & .date {
+    text-align: right;
+    font-size: small;
+  }
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  &:hover {
+    box-shadow: 15px 15px #1d3557;
+    transition: 500ms;
+    -webkit-transition: 500ms;
+    -moz-transition: 500ms;
+    -ms-transition: 500ms;
+    -o-transition: 500ms;
+    transform: translate(-2.1rem, -2ex);
+    -webkit-transform: translate(-2.1rem, -2ex);
+    -moz-transform: translate(-2.1rem, -2ex);
+    -ms-transform: translate(-2.1rem, -2ex);
+    -o-transform: translate(-2.1rem, -2ex);
+}
+}
+.header {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  background-color: #E63946;
+}

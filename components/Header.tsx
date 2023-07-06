@@ -1,11 +1,13 @@
-interface Props {
-  children: string;
+import React, { FC } from "react"
+
+interface TitleProps {
+  title: string,
 }
 
-const Header: React.FC<Props> = ({ children }) => {
+const Header: React.FC<TitleProps> = ({ title }) => {
   return (
     <div className="header">
-      <section>{ children }</section>
+      <h1>{title}</h1>
     </div>
    );
 }
