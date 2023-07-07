@@ -1,12 +1,18 @@
 .Card-Component {
   background-color: #457B9D;
+  border: 3px solid #1d3557;
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   padding: 32px;
   color: white;
+
   & img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -17,6 +23,9 @@
     text-align: justify;
   }
   & p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     text-align: justify;
   }
   & .date {
@@ -43,10 +52,30 @@
 }
 }
 .header {
-  display: flex;
+  display: fixed;
   width: 100%;
   align-items: center;
   gap: 10px;
   color: white;
   background-color: #E63946;
+}
+
+.grid-component {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  @media screen and (max-width: 1280px) {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 896px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 640px) {
+      display: grid;
+
+      grid-template-columns: repeat(1, 1fr);
+  }
 }

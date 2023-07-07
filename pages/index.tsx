@@ -26,7 +26,9 @@ export default function BreakingNewsPage({ newsArticles } : BreakingNewsPageProp
         <title key="title">Breaking News Page</title>
       </Head>
       <main>
-        <NewsArticleEntry article={newsArticles[12]} />
+        <section>
+          <NewsArticleGrid articles={newsArticles} />
+        </section>
       </main>
     </>
   )

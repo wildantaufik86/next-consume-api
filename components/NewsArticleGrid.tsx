@@ -8,14 +8,16 @@ interface NewsArticleGridProps {
 const NewsArticleGrid = ({ articles } : NewsArticleGridProps) => {
   return (
     <>
+    <div className="grid-component">
       {
-        articles.map(article => {
+        articles.map(article => (
           <div key={article.url}>
             <NewsArticleEntry article={article} />
           </div>
-        })
+        ))
       }
-      </>
+    </div>
+    </>
    );
 }
 
